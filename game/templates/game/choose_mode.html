@@ -1,0 +1,25 @@
+<!-- game/templates/game/choose_mode.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Game Mode</title>
+    {% load static %}
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'game/choose_mode.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Game Mode</h1>
+        <form action="{% url 'choose_mode' %}" method="post" class="game-mode-form">
+            {% csrf_token %}
+            <div class="mode-description">Select the game mode:</div>
+            <div class="button-group">
+                <button type="submit" name="mode" value="AI" class="mode-button">Play with AI</button>
+                <button type="submit" name="mode" value="player" class="mode-button">Player vs Player</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

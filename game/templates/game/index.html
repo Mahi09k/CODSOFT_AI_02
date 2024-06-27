@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe Game</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'game/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="board">
+            {% for row in board %}
+                <div class="row">
+                    {% for cell in row %}
+                        <div class="cell" data-row="{{ forloop.parentloop.counter0 }}" data-col="{{ forloop.counter0 }}">
+                            {{ cell }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <p>{{ status }}</p>
+        <form action="{% url 'ai_game_view_name' %}" method="get">
+            <input type="hidden" name="reset" value="true">
+            <button type="submit">Reset Game</button>
+        </form>
+    </div>
+    <script>
+        // JavaScript for handling player moves
+        document.querySelectorAll('.cell').forEach(cell => {
+            cell.addEventListener('click', function() {
+                const row = this.getAttribute('data-row');
+                const col = this.getAttribute('data-col');
+                window.location.href = `{% url 'ai_game_view_name' %}?row=${row}&col=${col}`;
+            });
+        });
+    </script>
+</body>
+</html>

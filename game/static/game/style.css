@@ -1,0 +1,67 @@
+/* Add your CSS styles for the game board and centering here */
+body {
+    background: linear-gradient(to right, lavender, skyblue); /* Gradient background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scroll bars from appearing */
+}
+
+.container {
+    text-align: center; /* Center align the content */
+    margin-top: 50px; /* Add some top margin for spacing */
+}
+
+h1 {
+    color: navy; /* Heading text color */
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+}
+
+.board {
+    display: inline-block;
+    margin-top: 20px; /* Adjust top margin for the game board */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for board */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the board */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.row {
+    display: flex; /* Ensure rows are displayed horizontally */
+}
+
+.cell {
+    width: 100px; /* Increased width for each cell */
+    height: 100px; /* Increased height for each cell */
+    line-height: 100px; /* Center the content vertically */
+    text-align: center;
+    border: 2px solid navy; /* Border color */
+    font-size: 48px; /* Adjust font size for cell content */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.cell:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background color on hover */
+}
+
+/* Increase font size for game status texts */
+.game-status {
+    font-size: 28px;
+    margin-bottom: 10px; /* Add some bottom margin for spacing */
+}
+
+/* Animation example */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.animated-text {
+    animation: fadeInOut 3s infinite; /* Apply animation to the text */
+}

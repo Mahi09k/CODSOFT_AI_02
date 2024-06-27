@@ -1,0 +1,59 @@
+/* game/static/game/choose_mode.css */
+
+/* Center align the content */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: navy;
+    font-size: 2em;
+}
+
+.mode-description {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: navy;
+}
+
+.game-mode-form {
+    margin-top: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+}
+
+.mode-button {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    margin: 0 10px;
+    border: 2px solid navy;
+    background-color: transparent;
+    color: navy;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mode-button:hover {
+    background-color: navy;
+    color: white;
+}
+
+.mode-button:focus {
+    outline: none;
+}
+
+.mode-button:active {
+    transform: translateY(1px);
+}
